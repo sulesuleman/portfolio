@@ -1,14 +1,14 @@
 import { Grid } from "@mui/material";
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import ProjectImageCarousel from "../Carousels/ProjectCarousel";
 import OutlinedButton from "../Buttons/OutlinedButton";
-
+import { motion} from "framer-motion";
 
 const ButtonContainer = styled.div`
-    margin-top: 10px;
-    // width: 30%;
-` 
+  margin-top: 10px;
+  // width: 30%;
+`;
 
 const Button = styled.button`
   display: none;
@@ -103,16 +103,16 @@ const Date = styled.div`
 
 const Description = styled.div`
   font-weight: 400;
-  color: ${({ theme }) => theme.text_secondary };
+  color: ${({ theme }) => theme.text_secondary};
   overflow: hidden;
   margin-top: 8px;
   font-size: 14px;
   text-align: justify;
-//   display: -webkit-box;
-//   max-width: 100%;
-//   -webkit-line-clamp: 3;
-//   -webkit-box-orient: vertical;
-//   text-overflow: ellipsis;
+  //   display: -webkit-box;
+  //   max-width: 100%;
+  //   -webkit-line-clamp: 3;
+  //   -webkit-box-orient: vertical;
+  //   text-overflow: ellipsis;
 `;
 
 const Members = styled.div`
@@ -131,39 +131,52 @@ const Avatar = styled.img`
 `;
 
 const ProjectCards = ({ project, setOpenModal, even }) => {
+
   return (
-    <Card container xs={12} rowGap={5}>
-      {!even && (
-        <Grid item xs={12} md={6}>
-          <ProjectImageCarousel images={project.images} />
+    <motion.div
+    key={project.id}
+      className={`project_card-${project.id}`}
+      initial={"hidden"}
+      whileInView={"visible"}
+      transition={{ duration: 1 }}
+      variants={{
+        visible: { opacity: 1, scale: 1 },
+        hidden: { opacity: 0, scale: 0 },
+      }}
+    >
+      <Card container xs={12} rowGap={5}>
+        {!even && (
+          <Grid item xs={12} md={6}>
+            <ProjectImageCarousel images={project.images} />
+          </Grid>
+        )}
+        <Grid item xs={12} md={5}>
+          <Details>
+            <Title>{project.title}</Title>
+            <Date>{project.date}</Date>
+            <Description>{project.description}</Description>
+          </Details>
+          <Tags>
+            {project.tags?.map((tag, index) => (
+              <Tag>{tag}</Tag>
+            ))}
+          </Tags>
+          {/* <ButtonContainer> */}
+          <OutlinedButton link={project.href}>Visit Website</OutlinedButton>
+          {/* </ButtonContainer> */}
         </Grid>
-      )}
-      <Grid item xs={12} md={5} >
-        <Details>
-          <Title>{project.title}</Title>
-          <Date>{project.date}</Date>
-          <Description>{project.description}</Description>
-        </Details>
-        <Tags>
-          {project.tags?.map((tag, index) => (
-            <Tag>{tag}</Tag>
-          ))}
-        </Tags>
-        {/* <ButtonContainer> */}
-            <OutlinedButton link={project.href}>Visit Website</OutlinedButton>
-        {/* </ButtonContainer> */}
-      </Grid>
-      {even && (
-        <Grid item xs={12} md={6}>
-          <ProjectImageCarousel images={project.images} />
-        </Grid>
-      )}
-      {/* <Members>
+        {even && (
+          <Grid item xs={12} md={6}>
+            <ProjectImageCarousel images={project.images} />
+          </Grid>
+        )}
+        {/* <Members>
                 {project.member?.map((member) => (
                     <Avatar src={member.img}/>
                 ))}
             </Members> */}
-    </Card>
+      </Card>
+    // </motion.div>
   );
 };
 

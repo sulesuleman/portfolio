@@ -1,0 +1,112 @@
+.carousel-section {
+    /* position: relative; */
+    position: static;
+}
+
+.carousal-wrapper {
+    /* position: absolute; */
+    /* top: -28px; */
+    /* left: 0; */
+    /* right: 0; */
+    /* margin: 0 auto; */
+    width: 100%;
+}
+
+.carousel {
+    position: relative;
+    height: 269px;
+    margin: 0;
+    display: flex;
+    gap: 68px;
+    align-items: center;
+    /* max-width: 1160px; */
+    /* left: 0; */
+    /* right: 0; */
+    /* margin: 0 auto; */
+}
+
+.carousel-images {
+    max-width: 269px;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px 0 0 12px;
+}
+
+.carousel-track-container {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-track {
+    padding: 0;
+    margin: 0;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    transition: transform 0.4s ease-in-out;
+}
+
+.carousel-slide {
+    /* position: absolute; */
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    gap: 36px;
+}
+
+.carousel-button {
+    padding: 0;
+    position: relative;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+
+}
+
+.carousel-button:hover:active {
+    color: var(--primary-light-color);
+}
+
+.carousel-button-right {
+    transform: rotate(180deg);
+}
+
+.carousel-button img {
+    width: 24.24px;
+    height: 40px;
+}
+
+.carousel-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 37px;
+    margin-top: 64px;
+}
+
+.carousel-indicator {
+    border: 0;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    background-color: var(--faded-color);
+    cursor: pointer;
+}
+
+.carousel-indicator.current-slide {
+    background: var(--primary-light-color);
+}
+
+.carousal-text-wrap {
+    position: relative;
+    background-color: var(--primary-bold-color);
+    max-width: 675px;
+    width: 100%;
+    border-radius: 0 12px 12px 0;
+    padding: 62px 65px 45px;
+}

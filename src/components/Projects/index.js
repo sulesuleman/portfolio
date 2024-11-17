@@ -12,8 +12,11 @@ import {
 } from "./ProjectsStyle";
 import ProjectCard from "../Cards/ProjectCards";
 import { projects } from "../../data/constants";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 const Projects = ({ openModal, setOpenModal }) => {
+  const isBelowDesktopView = useMediaQuery("(max-width: 899px)");
+
   const [toggle, setToggle] = useState("all");
   return (
     <Container id="projects">
@@ -56,20 +59,20 @@ const Projects = ({ openModal, setOpenModal }) => {
               <ProjectCard
                 project={project}
                 openModal={openModal}
-                even={index % 2 === 0}
+                even={isBelowDesktopView ? true : index % 2 === 0}
                 setOpenModal={setOpenModal}
               />
             ))}
-          {projects
+          {/* {projects
             .filter((item) => item.category === toggle)
             .map((project, index) => (
               <ProjectCard
                 project={project}
-                even={index % 2 === 0}
+                even={isBelowDesktopView ? true : index % 2 === 0}
                 openModal={openModal}
                 setOpenModal={setOpenModal}
               />
-            ))}
+            ))} */}
         </CardContainer>
       </Wrapper>
     </Container>
