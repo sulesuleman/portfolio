@@ -53,7 +53,6 @@ function App() {
           <Wrapper>
             {/* <Experience /> */}
             {/* <Education /> */}
-
             <Contact />
           </Wrapper>
           <Footer />

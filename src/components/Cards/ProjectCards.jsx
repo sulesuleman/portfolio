@@ -1,5 +1,5 @@
 import { Grid } from "@mui/material";
-import React, { useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 import ProjectImageCarousel from "../Carousels/ProjectCarousel";
 import OutlinedButton from "../Buttons/OutlinedButton";
@@ -176,7 +176,7 @@ const ProjectCards = ({ project, setOpenModal, even }) => {
                 ))}
             </Members> */}
       </Card>
-    // </motion.div>
+    </motion.div>
   );
 };
 
