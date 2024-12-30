@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { testimonials } from "../../data/constants";
 import "./testimonial-carousel.styles.css";
+import { Box, Paper, Typography } from "@mui/material";
+import Slider from "react-slick";
 
 const Container = styled.div`
   display: flex;
@@ -54,7 +56,7 @@ const Desc = styled.div`
   }
 `;
 
-const TestimonialSection = styled.div`
+const RecommendationSection = styled.div`
   width: 100%;
   max-width: 1000px;
   margin-top: 10px;
@@ -67,6 +69,27 @@ const TestimonialSection = styled.div`
 `;
 
 const index = () => {
+  const isBelowLargeScreen = window.innerWidth < 900;
+  const settings = {
+    dots: false,
+    fade: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: true,
+    responsive: [
+      {
+        breakpoint: 900,
+        settings: {
+          arrows: false,
+          autoplay: true,
+          autoplaySpeed: 3000,
+        },
+      },
+    ],
+  };
+
   return (
     <Container id="experience">
       <Wrapper>
@@ -75,52 +98,42 @@ const index = () => {
           My work experience as a software engineer and working on different
           companies and projects.
         </Desc> */}
-        <TestimonialSection>
-          <section class="carousel-section">
-            <div class="carousal-wrapper">
-              <div class="carousel">
-                <button class="carousel-button carousel-button-left ">
-                  <img src="/assets/carousel-arrow.svg" alt="left" />
-                </button>
-                <div class="carousel-track-container">
-                  <ul class="carousel-track">
-                    {testimonials.map((testimonial, index) => (
-                      <li
-                        key={testimonial.id}
-                        class="carousel-slide current-slide"
-                      >
-                        <img
-                          class="carousel-images"
-                          src={testimonial?.image || ""}
-                          alt={`${testimonial?.name}'s image`}
-                        />
-                        <div class="carousal-text-wrap">
-                          <img
-                            src="./assets/quotes.svg"
-                            alt="quotations"
-                            class="quotations-svg"
-                          />
-                          <div class="ct-wrap">
-                            <p class="ct-heading">{testimonial.name}</p>
-                            <pre class="ct-content">{testimonial.quote}</pre>
-                          </div>
-                        </div>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <button class="carousel-button carousel-button-right">
-                  <img src="/assets/carousel-arrow.svg" alt="right" />
-                </button>
-              </div>
-              <div class="carousel-nav">
-                <button class="carousel-indicator current-slide"></button>
-                <button class="carousel-indicator"></button>
-                <button class="carousel-indicator"></button>
-              </div>
-            </div>
-          </section>
-        </TestimonialSection>
+        <RecommendationSection>
+          <Box
+            sx={{
+              width: "100%",
+              maxWidth: "100%",
+              margin: "0 auto",
+              padding: isBelowLargeScreen ? "20px" : "36px",
+            }}
+          >
+            <Slider {...settings}>
+              {testimonials.map((testimonial, index) => (
+                <Paper
+                  sx={{
+                    elevation: 3,
+                    padding: 4,
+                    borderRadius: 2,
+                    textAlign: "center",
+                    margin: "0 auto",
+                    width: "100%",
+                    height: "auto",
+                  }}
+                >
+                  <Typography variant="h6" sx={{ fontStyle: "italic", mb: 2 }}>
+                    "{testimonial.quote}"
+                  </Typography>
+                  <Typography variant="subtitle1" sx={{ fontWeight: "bold" }}>
+                    - {testimonial.author}
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    {testimonial.organization}
+                  </Typography>
+                </Paper>
+              ))}
+            </Slider>
+          </Box>
+        </RecommendationSection>
       </Wrapper>
     </Container>
   );

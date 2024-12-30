@@ -3,7 +3,6 @@
 // import Slider from 'react-slick';
 // import styled from 'styled-components';
 
-
 // const ProjectImageCarousel = ({ images }) => {
 
 //  const settings = {
@@ -46,9 +45,9 @@ const CarouselContainer = styled.div`
   margin: auto;
   border-radius: 10px;
   scroll-snap-type: x mandatory;
-  `;
-  
-  const CarouselWrapper = styled(motion.div)`
+`;
+
+const CarouselWrapper = styled(motion.div)`
   display: flex;
   scroll-snap-align: start;
   scroll-behavior: smooth;

@@ -461,7 +461,7 @@ export const TimeLineData = [
 export const testimonials = [
   {
     id: 0,
-    name: "Yusra Fatima",
+    author: "Yusra Fatima",
     image: null,
     organization: "Onestream Live",
     quote: `I have worked with suleman on Optimisation project. Suleman is an exceptional developer who quickly understood the entire product in a remarkably short time. Within weeks, he began working on new features with impressive speed and efficiency. Despite the tight deadlines, he single-handedly developed several critical features, none of which have ever encountered failures.
@@ -470,14 +470,14 @@ Moreover, he made a detailed optimization report for the whole product providing
   },
   {
     id: 1,
-    name: "Hamza Iqbal",
+    author: "Hamza Iqbal",
     image: null,
     organization: "Onestream Live",
     quote: `I had the opportunity of working with Muhammad Suleman in OneStream live. His technical ability is top-notch, and he is adept at solving complex problems while helping the team members along the way. He works seamlessly in a fast-paced environment, and his work quality is exceptional. Additionally, he mentors and guides others on best practices and new trends, showcasing his strong leadership qualities. His dedication would make him a valuable asset to any team he joins.`,
   },
   {
     id: 2,
-    name: "Misha'el Mushtaq",
+    author: "Misha'el Mushtaq",
     image: null,
     organization: "Bitsol Technologies",
     quote: `During Suleman's tenure, he exhibited remarkable professionalism, being consistently punctual, respectful, and diligent in adhering to office policies. He actively contributed as a dedicated member of our Culture Committee, displaying enthusiasm and creativity. Muhammad Suleman, is not only a valuable asset due to his skills but also a pleasure to work with, embodying the qualities of a true professional and team player. I wholeheartedly recommend him for any endeavor.
@@ -485,7 +485,7 @@ Additionally, Muhammad Suleman possesses excellent interpersonal skills, fosteri
   },
   {
     id: 3,
-    name: "Rizwan Ahmed",
+    author: "Rizwan Ahmed",
     image: null,
     organization: "Bitsol Technologies",
     quote: `I highly recommend Mr. Suleman as a Software Engineer. While I haven't been his direct supervisor, his work ethics and communication skills are commendable. He's proven to be an excellent team player and possesses strong technical skills. Suleman's contributions to any team are sure to be valuable.`,

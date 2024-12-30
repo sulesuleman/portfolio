@@ -27,7 +27,7 @@ const Navbar = () => {
     <Nav>
       <NavbarContainer>
         <NavLogo to="/">
-          <a
+          <div
             style={{
               display: "flex",
               alignItems: "center",
@@ -37,7 +37,7 @@ const Navbar = () => {
             }}
           >
             <SpanTitle>MS</SpanTitle> <Span>Portfolio</Span>
-          </a>
+          </div>
         </NavLogo>
         <MobileIcon>
           <FaBars

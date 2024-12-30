@@ -3,7 +3,7 @@ import React from "react";
 import styled from "styled-components";
 import ProjectImageCarousel from "../Carousels/ProjectCarousel";
 import OutlinedButton from "../Buttons/OutlinedButton";
-import { motion} from "framer-motion";
+import { motion } from "framer-motion";
 
 const ButtonContainer = styled.div`
   margin-top: 10px;
@@ -131,10 +131,9 @@ const Avatar = styled.img`
 `;
 
 const ProjectCards = ({ project, setOpenModal, even }) => {
-
   return (
     <motion.div
-    key={project.id}
+      key={project.id}
       className={`project_card-${project.id}`}
       initial={"hidden"}
       whileInView={"visible"}
