@@ -14,9 +14,6 @@ import Footer from "./components/Footer";
 import ProjectDetails from "./components/ProjectDetails";
 import styled from "styled-components";
 
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-
 const Body = styled.div`
   background-color: ${({ theme }) => theme.bg};
   width: 100%;

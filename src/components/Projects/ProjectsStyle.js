@@ -1,6 +1,5 @@
+import { Box } from "@mui/material";
 import styled from "styled-components";
-import _default from "../../themes/default";
-import { Grid } from "@mui/material";
 
 export const Container = styled.div`
   background: linear-gradient(
@@ -90,21 +89,8 @@ export const Divider = styled.div`
   background: ${({ theme }) => theme.primary};
 `;
 
-export const CardContainer = styled(Grid)`
+export const CardContainer = styled(Box)`
   display: flex;
-  // justify-content: center;
-  // align-items: center;
+  flex-direction: column;
   width: 100%;
-  //   gap: 28px;
-  // flex-wrap: wrap;
-  // display: grid;
-  // grid-template-columns: repeat(3, 1fr);
-  // grid-gap: 32px;
-  // grid-auto-rows: minmax(100px, auto);
-  // @media (max-width: 960px) {
-  //     grid-template-columns: repeat(2, 1fr);
-  // }
-  // @media (max-width: 640px) {
-  //     grid-template-columns: repeat(1, 1fr);
-  // }
 `;

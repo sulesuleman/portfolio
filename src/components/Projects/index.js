@@ -53,7 +53,7 @@ const Projects = ({ openModal, setOpenModal }) => {
           </ToggleButton>
           {/* <Divider /> */}
         </ToggleButtonGroup>
-        <CardContainer container xs={12} rowGap={7}>
+        <CardContainer rowGap={7}>
           {toggle === "all" &&
             projects.map((project, index) => (
               <ProjectCard

@@ -1,56 +1,16 @@
 import { Grid } from "@mui/material";
+import { motion } from "framer-motion";
 import React from "react";
 import styled from "styled-components";
-import ProjectImageCarousel from "../Carousels/ProjectCarousel";
+
 import OutlinedButton from "../Buttons/OutlinedButton";
-import { motion } from "framer-motion";
+import ProjectImageCarousel from "../Carousels/ProjectCarousel";
 
-const ButtonContainer = styled.div`
-  margin-top: 10px;
-  // width: 30%;
-`;
-
-const Button = styled.button`
-  display: none;
-  width: 100%;
-  padding: 10px;
-  background-color: ${({ theme }) => theme.white};
-  color: ${({ theme }) => theme.text_black};
-  font-size: 14px;
-  font-weight: 700;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: all 0.8s ease-in-out;
-`;
 const Card = styled(Grid)`
   width: 100%;
-  // height: 490px;
-  // background-color: ${({ theme }) => theme.card};
-  // cursor: pointer;
-  // border-radius: 10px;
-  // box-shadow: 0 0 12px 4px rgba(0,0,0,0.4);
-  // overflow: hidden;
   justify-content: space-evenly;
   padding: 26px 20px;
   gap: 14px;
-  // transition: all 0.5s ease-in-out;
-  // &:hover {
-  //     transform: translateY(-10px);
-  //     box-shadow: 0 0 50px 4px rgba(0,0,0,0.6);
-  //     filter: brightness(1.1);
-  // }
-  // &:hover ${Button} {
-  //     display: block;
-  // }
-`;
-
-const Image = styled.img`
-  width: 100%;
-  height: 180px;
-  background-color: ${({ theme }) => theme.white};
-  border-radius: 10px;
-  box-shadow: 0 0 16px 2px rgba(0, 0, 0, 0.3);
 `;
 
 const Tags = styled.div`
@@ -115,22 +75,7 @@ const Description = styled.div`
   //   text-overflow: ellipsis;
 `;
 
-const Members = styled.div`
-  display: flex;
-  align-items: center;
-  padding-left: 10px;
-`;
-const Avatar = styled.img`
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  margin-left: -10px;
-  background-color: ${({ theme }) => theme.white};
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  border: 3px solid ${({ theme }) => theme.card};
-`;
-
-const ProjectCards = ({ project, setOpenModal, even }) => {
+const ProjectCards = ({ project, even }) => {
   return (
     <motion.div
       key={project.id}
@@ -143,12 +88,11 @@ const ProjectCards = ({ project, setOpenModal, even }) => {
         hidden: { opacity: 0, scale: 0 },
       }}
     >
-      <Card container xs={12} rowGap={5}>
-        {!even && (
-          <Grid item xs={12} md={6}>
-            <ProjectImageCarousel images={project.images} />
-          </Grid>
-        )}
+      <Card
+        container
+        rowGap={5}
+        sx={{ flexDirection: even ? "row" : "row-reverse" }}
+      >
         <Grid item xs={12} md={5}>
           <Details>
             <Title>{project.title}</Title>
@@ -160,20 +104,11 @@ const ProjectCards = ({ project, setOpenModal, even }) => {
               <Tag>{tag}</Tag>
             ))}
           </Tags>
-          {/* <ButtonContainer> */}
           <OutlinedButton link={project.href}>Visit Website</OutlinedButton>
-          {/* </ButtonContainer> */}
         </Grid>
-        {even && (
-          <Grid item xs={12} md={6}>
-            <ProjectImageCarousel images={project.images} />
-          </Grid>
-        )}
-        {/* <Members>
-                {project.member?.map((member) => (
-                    <Avatar src={member.img}/>
-                ))}
-            </Members> */}
+        <Grid item xs={12} md={6}>
+          <ProjectImageCarousel images={project.images} />
+        </Grid>
       </Card>
     </motion.div>
   );

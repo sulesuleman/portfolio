@@ -145,30 +145,9 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setIsSending(true);
-    const serviceId = "service_mew118t";
-    const templateId = "template_gphlq6b";
-    const publicKey = "w0Woj-ONvC3wp7YML";
-
-    const templateParams = {
-      from_name: name,
-      from_email: email,
-      // subject,
-      to_name: "Muhammad Suleman",
-      message: message,
-    };
-
-    emailjs
-      .send(serviceId, templateId, templateParams, publicKey)
-      .then((response) => {
-        setOpen(true);
-        form.current.reset();
-        setIsSending(false);
-      })
-      .catch((error) => {
-        console.log(error.text);
-        setIsSending(false);
-      });
+    window.open(
+      `mailto:mousuleman@gmail.com?subject=${subject}&body=${message}`
+    );
   };
 
   return (
@@ -187,15 +166,10 @@ const Contact = () => {
             onChange={(e) => setEmail(e.target.value)}
           />
           <ContactInput
-            placeholder="Your Name"
-            name="from_name"
-            onChange={(e) => setName(e.target.value)}
-          />
-          {/* <ContactInput
             placeholder="Subject"
             name="subject"
             onChange={(e) => setSubject(e.target.value)}
-          /> */}
+          />
           <ContactInputMessage
             placeholder="Message"
             rows="4"

@@ -1,6 +1,6 @@
 export const Bio = {
   name: "M. Suleman",
-  roles: ["Full Stack Developer", "Mobile Developer", "Programmer", "Debugger"],
+  roles: ["Full Stack Developer", "UI Developer", "Problem Solver"],
   description:
     "I am a motivated and versatile individual, always eager to take on new challenges. With a passion for learning I am dedicated to delivering high-quality results. With a positive attitude and a growth mindset, I am ready to make a meaningful contribution and achieve great things.",
   github: "https://github.com/sulesuleman",
@@ -377,29 +377,29 @@ export const projects = [
     github: null,
     href: "https://www.socialtravel.world/",
   },
-  {
-    id: 2,
-    title: "The Coterie",
-    date: null,
-    description:
-      "The Coterie is a digital platform designed to streamline private fund management for both General Partners (GPs) and Limited Partners (LPs). It provides a comprehensive suite of tools for end-to-end investment management, simplifying processes like capital calls, fund performance tracking, and document handling. The platform offers a seamless experience, automating tasks and providing an intuitive interface for better transparency and efficiency in managing private investments​.",
-    images: [
-      "/assets/projects/coterie/elevating-private-funds.png",
-      "/assets/projects/coterie/never-login-into-portal.png",
-    ],
-    tags: [
-      "Next.Js 13",
-      "GitHub",
-      "Prettier",
-      "Eslint",
-      "Axios",
-      "TailwindCSS",
-      "Shadcn",
-    ],
-    category: "web app",
-    github: null,
-    href: "https://www.thecoterie.co/",
-  },
+  // {
+  //   id: 2,
+  //   title: "The Coterie",
+  //   date: null,
+  //   description:
+  //     "The Coterie is a digital platform designed to streamline private fund management for both General Partners (GPs) and Limited Partners (LPs). It provides a comprehensive suite of tools for end-to-end investment management, simplifying processes like capital calls, fund performance tracking, and document handling. The platform offers a seamless experience, automating tasks and providing an intuitive interface for better transparency and efficiency in managing private investments​.",
+  //   images: [
+  //     "/assets/projects/coterie/elevating-private-funds.png",
+  //     "/assets/projects/coterie/never-login-into-portal.png",
+  //   ],
+  //   tags: [
+  //     "Next.Js 13",
+  //     "GitHub",
+  //     "Prettier",
+  //     "Eslint",
+  //     "Axios",
+  //     "TailwindCSS",
+  //     "Shadcn",
+  //   ],
+  //   category: "web app",
+  //   github: null,
+  //   href: "https://www.thecoterie.co/",
+  // },
   {
     id: 3,
     title: "Pamela Hudson Real Estate",
